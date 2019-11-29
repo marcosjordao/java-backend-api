@@ -48,7 +48,7 @@ public class PersonServiceTests {
 		Person personToAdd = new Person("Complete Name");
 		personService.addPerson(personToAdd);
 
-		Long id = personToAdd.getId();
+		String id = personToAdd.getId();
 
 		Optional<Person> personAdded = personService.getPersonById(id);
 
@@ -70,7 +70,7 @@ public class PersonServiceTests {
 	@Test
 	public void should_update_existing_Person() {
 		List<Person> persons = personService.getAllPersons();
-		Long id = persons.get(0).getId();
+		String id = persons.get(0).getId();
 
 		Person personToUpdate = personService.getPersonById(id).get();
 		personToUpdate.setEmail(new Email("mail@updated.com"));
@@ -85,7 +85,7 @@ public class PersonServiceTests {
 	@Test(expected = ConstraintViolationException.class)
 	public void should_throw_exception_on_update_invalid_Person() {
 		List<Person> persons = personService.getAllPersons();
-		Long id = persons.get(0).getId();
+		String id = persons.get(0).getId();
 
 		Person personToUpdate = personService.getPersonById(id).get();
 		personToUpdate.setEmail(new Email("invalid"));
@@ -98,7 +98,7 @@ public class PersonServiceTests {
 		List<Person> persons = personService.getAllPersons();
 		int countBeforeDelete = persons.size();
 
-		Long idToDelete = persons.get(0).getId();
+		String idToDelete = persons.get(0).getId();
 
 		Person personToDelete = personService.getPersonById(idToDelete).get();
 		personService.deletePerson(personToDelete);
