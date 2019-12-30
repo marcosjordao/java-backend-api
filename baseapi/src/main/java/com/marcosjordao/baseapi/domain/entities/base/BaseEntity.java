@@ -10,15 +10,15 @@ public abstract class BaseEntity implements IBaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private String id;
 
 	@Override
-	public Long getId() {
+	public String getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

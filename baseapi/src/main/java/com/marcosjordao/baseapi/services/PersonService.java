@@ -21,11 +21,11 @@ public class PersonService implements IPersonService {
 		this.personRepository = personRepository;
 	}
 
-	public Optional<Person> getPersonById(Long id) {
+	public Optional<Person> getPersonById(String id) {
 		return this.personRepository.findById(id);
 	}
 
-	public boolean existsById(Long id) {
+	public boolean existsById(String id) {
 		return this.personRepository.existsById(id);
 	}
 
@@ -51,7 +51,7 @@ public class PersonService implements IPersonService {
 		this.personRepository.delete(person);
 	}
 
-	public void deletePersonById(Long id) {
+	public void deletePersonById(String id) {
 		Optional<Person> personToDelete = this.getPersonById(id);
 
 		personToDelete.ifPresentOrElse(this::deletePerson, NoSuchElementException::new);
