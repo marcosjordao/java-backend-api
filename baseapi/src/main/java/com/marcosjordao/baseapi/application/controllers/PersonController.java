@@ -37,7 +37,7 @@ public class PersonController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Person> get(@PathVariable Long id) {
+	public ResponseEntity<Person> get(@PathVariable String id) {
 		Optional<Person> person = personService.getPersonById(id);
 		
 		return person.map(ResponseEntity::ok)

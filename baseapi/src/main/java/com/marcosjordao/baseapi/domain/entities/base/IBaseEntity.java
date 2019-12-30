@@ -2,8 +2,8 @@ package com.marcosjordao.baseapi.domain.entities.base;
 
 public interface IBaseEntity {
 
-	public Long getId();
+	public String getId();
 
-	public void setId(Long id);
+	public void setId(String id);
 
 }

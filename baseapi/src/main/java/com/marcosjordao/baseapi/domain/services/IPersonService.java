@@ -7,9 +7,9 @@ import com.marcosjordao.baseapi.domain.entities.Person;
 
 public interface IPersonService {
 
-	Optional<Person> getPersonById(Long id);
+	Optional<Person> getPersonById(String id);
 
-	boolean existsById(Long id);
+	boolean existsById(String id);
 
 	List<Person> getAllPersons();
 
@@ -19,5 +19,5 @@ public interface IPersonService {
 
 	void deletePerson(Person person);
 
-	void deletePersonById(Long id);
+	void deletePersonById(String id);
 }
